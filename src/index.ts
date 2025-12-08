@@ -1,30 +1,57 @@
-// whatsapp-bot/src/index.ts
+import express from 'express';
+import path from 'path';
+import { config } from './config';
+import webhookRouter from './routes/webhook';
+import { imageHostingService } from './services/imageHostingService';
 
-// טען משתנים סודיים מהקובץ .env לפני כל הייבואים
-import dotenv from "dotenv";
-dotenv.config();
-
-import express from "express";
-import bodyParser from "body-parser";
-import webhookRouter from "./routes/webhook";
-
-// צור אפליקציית Express
 const app = express();
 
-// אפשר קבלת JSON ו-form-data בבקשות POST
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+// Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// נהל את הנתיב של ה־Webhook
-app.use("/webhook", webhookRouter);
+// Serve generated images statically
+app.use('/images', express.static(imageHostingService.getServingPath()));
 
-// ברירת מחדל ל־404
-app.use((req, res) => {
-  res.status(404).send("נתיב לא נמצא");
+// Routes
+app.use('/webhook', webhookRouter);
+
+// Health check
+app.get('/health', (req, res) => {
+    res.json({
+        status: 'ok',
+        uptime: process.uptime(),
+        timestamp: new Date().toISOString(),
+    });
 });
 
-// הרץ את השרת
-const PORT = process.env.PORT || 3100;
-app.listen(PORT, () => {
-  console.log(`🚀 WhatsApp Bot רץ על פורט ${PORT}`);
+// Root
+app.get('/', (req, res) => {
+    res.json({
+        name: 'WhatsApp Bot - TicketAgent',
+        version: '1.0.0',
+        endpoints: {
+            webhook: '/webhook',
+            health: '/health',
+            images: '/images/:filename',
+        },
+    });
 });
+
+// Start server
+app.listen(config.server.port, () => {
+    console.log(`
+🤖 WhatsApp Bot Server Started!
+================================
+📡 Port: ${config.server.port}
+🔗 Webhook URL: http://localhost:${config.server.port}/webhook
+🏥 Health Check: http://localhost:${config.server.port}/health
+🖼️  Images: http://localhost:${config.server.port}/images/
+================================
+📝 Configure this webhook URL in Twilio Console:
+   https://console.twilio.com/
+================================
+  `);
+});
+
+export default app;

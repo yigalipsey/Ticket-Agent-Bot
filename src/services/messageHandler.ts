@@ -1,265 +1,125 @@
-import chalk from "chalk";
-import { sendAutoReply } from "./messageSender";
-import { findFootballTeams } from "./nlpService";
-import { findClosestTeamByText } from "./teamEmbeddingSearchService";
-import { findFixtureByTeamsSlug } from "./gameService";
-import { findBestOffersForFixture } from "./offerService";
+import { TwilioWebhookBody, Offer } from '../types';
+import { apiService } from './apiService';
+import { twilioService } from './twilioService';
 
-export interface WebhookBody {
-  MessageSid?: string;
-  From?: string;
-  Body?: string;
-  To?: string;
-  object?: string;
-  entry?: any[];
-  [key: string]: any;
-}
+/**
+ * Main message handler
+ */
+export class MessageHandler {
+    async handleMessage(webhookBody: TwilioWebhookBody): Promise<void> {
+        const { Body: messageText, From: userPhone } = webhookBody;
 
-export async function handleTwilioMessage(body: WebhookBody): Promise<void> {
-  console.log(chalk.green("═══════════════════════════════════════"));
-  console.log(chalk.green("📨 Received WhatsApp message from Twilio:"));
-  console.log(chalk.green("═══════════════════════════════════════"));
-  console.log(chalk.green(`   From: ${body.From}`));
-  console.log(chalk.green(`   To: ${body.To}`));
-  console.log(chalk.green(`   Message: ${body.Body || "(no text)"}`));
-  console.log(chalk.green(`   MessageSid: ${body.MessageSid}`));
-  console.log(chalk.green(`   Full body: ${JSON.stringify(body, null, 2)}`));
-  console.log(chalk.green("═══════════════════════════════════════"));
+        console.log(`[Handler] Received message from ${userPhone}: "${messageText}"`);
 
-  // בדוק איזה קבוצות כדורגל יש בהודעה ושלח תשובה
-  if (body.Body && body.From) {
-    const messageText = body.Body;
-    const teamsResult = await findFootballTeams(messageText);
-
-    if (teamsResult.found) {
-      console.log(
-        chalk.yellow(
-          `⚽ Football team names from OpenAI: ${teamsResult.teams.join(", ")}`
-        )
-      );
-
-      const resolvedTeams: {
-        originalName: string;
-        he?: string;
-        en?: string;
-        id?: string;
-        score?: number;
-        logoUrl?: string;
-        primaryColor?: string;
-        secondaryColor?: string;
-      }[] = [];
-
-      // שלב 2–3: התאמת כל שם קבוצה למאגר על בסיס אימבדינג (עם נרמול שמות)
-      for (const teamName of teamsResult.teams) {
-        try {
-          const match = await findClosestTeamByText(teamName);
-          if (match) {
-            resolvedTeams.push({
-              originalName: teamName,
-              he: match.name_he,
-              en: match.name_en,
-              id: match._id,
-              score: match.score,
-              logoUrl: match.logoUrl,
-              primaryColor: match.primaryColor,
-              secondaryColor: match.secondaryColor,
-            });
-          }
-        } catch (err: any) {
-          console.error(
-            chalk.red(
-              `❌ Error while searching closest team for "${teamName}": ${
-                err.message || "Unknown error"
-              }`
-            )
-          );
+        if (this.isSpecialCommand(messageText)) {
+            await this.handleSpecialCommand(messageText, userPhone);
+            return;
         }
-      }
-
-      let replyText = "";
-
-      // שלב 4–5: אם זוהו לפחות שתי קבוצות – ננסה למצוא משחק והצעות
-      if (resolvedTeams.length >= 2) {
-        const tryBuildReplyForTeams = async (
-          home: (typeof resolvedTeams)[number],
-          away: (typeof resolvedTeams)[number]
-        ) => {
-          const homeNameEn = home.en || home.he || home.originalName;
-          const awayNameEn = away.en || away.he || away.originalName;
-
-          const fixture = await findFixtureByTeamsSlug(homeNameEn, awayNameEn);
-          if (!fixture) {
-            return false;
-          }
-
-          const offers = await findBestOffersForFixture(fixture._id, 4);
-          if (!offers.length) {
-            replyText += "\n\nלא נמצאו הצעות זמינות למשחק הקרוב בין הקבוצות.";
-            return true;
-          }
-
-          const fixtureDateStr = fixture.date.toLocaleString("he-IL", {
-            year: "numeric",
-            month: "2-digit",
-            day: "2-digit",
-            hour: "2-digit",
-            minute: "2-digit",
-          });
-
-          const offersLines = offers.map((offer, idx) => {
-            const agentLabelParts: string[] = [];
-            if (offer.agentName) {
-              agentLabelParts.push(offer.agentName);
-            }
-            if (offer.agentWhatsapp) {
-              agentLabelParts.push(`יצירת קשר: ${offer.agentWhatsapp}`);
-            }
-            const agentLabel =
-              agentLabelParts.length > 0
-                ? agentLabelParts.join(" | ")
-                : `ID: ${offer.agentId}`;
-
-            return `${idx + 1}. מחיר: ${offer.price} ${
-              offer.currency
-            } | סוכן: ${agentLabel}`;
-          });
-
-          const homeDisplayName = home.he || home.en || home.originalName;
-          const awayDisplayName = away.he || away.en || away.originalName;
-
-          replyText +=
-            "\n\n🎟️ משחק שמצאתי:\n" +
-            `${homeDisplayName} 🆚 ${awayDisplayName}\n` +
-            `תאריך: ${fixtureDateStr}\n` +
-            (fixture.venueName
-              ? `🏟️ אצטדיון: ${fixture.venueName}${
-                  fixture.venueCity ? `, ${fixture.venueCity}` : ""
-                }\n`
-              : "") +
-            "\n💰 ההצעות הכי זולות:\n" +
-            offersLines.join("\n");
-
-          return true;
-        };
 
         try {
-          // ניסיון ראשון: עם שמות מנורמלים (התאמת אימבדינג רגילה)
-          let built = await tryBuildReplyForTeams(
-            resolvedTeams[0],
-            resolvedTeams[1]
-          );
+            await twilioService.sendProcessingMessage(userPhone);
 
-          // אם לא נמצא משחק – פולבק: חפש שוב קבוצות ללא נרמול, ואז נסה שוב למצוא משחק
-          if (!built) {
-            const fallbackResolved: typeof resolvedTeams = [];
+            console.log('[Handler] Calling API...');
+            const response = await apiService.searchOffers(messageText, userPhone);
+            console.log('[Handler] API Response:', JSON.stringify(response, null, 2));
 
-            for (const teamName of teamsResult.teams) {
-              try {
-                const match = await findClosestTeamByText(teamName, {
-                  skipNormalization: true,
-                });
-                if (match) {
-                  fallbackResolved.push({
-                    originalName: teamName,
-                    he: match.name_he,
-                    en: match.name_en,
-                    id: match._id,
-                    score: match.score,
-                    logoUrl: match.logoUrl,
-                    primaryColor: match.primaryColor,
-                    secondaryColor: match.secondaryColor,
-                  });
-                }
-              } catch (err: any) {
-                console.error(
-                  chalk.red(
-                    `❌ Fallback semantic search error for "${teamName}": ${
-                      err.message || "Unknown error"
-                    }`
-                  )
-                );
-              }
+            if (!response.success || !response.data || response.data.length === 0) {
+                await twilioService.sendNoOffersMessage(userPhone, messageText);
+                return;
             }
 
-            if (fallbackResolved.length >= 2) {
-              built = await tryBuildReplyForTeams(
-                fallbackResolved[0],
-                fallbackResolved[1]
-              );
-            }
-          }
+            const offersText = this.formatOffersAsText(response.data, messageText);
+            await twilioService.sendTextMessage(userPhone, offersText);
 
-          if (!built) {
-            replyText +=
-              "\n\nלא נמצא משחק עתידי במאגר בין הקבוצות לפי השמות שנמסרו.";
-          }
-        } catch (err: any) {
-          console.error(
-            chalk.red(
-              `❌ Error while finding fixture/offers: ${
-                err.message || "Unknown error"
-              }`
-            )
-          );
-          replyText += "\n\nשגיאה בעת חיפוש המשחק או ההצעות במאגר.";
+        } catch (error) {
+            console.error('[Handler] Error processing message:', error);
+            await twilioService.sendTextMessage(
+                userPhone,
+                '😓 אופס! משהו השתבש. נסה שוב בעוד רגע.'
+            );
         }
-      }
-
-      await sendAutoReply(body.From, replyText);
-    } else {
-      console.log(chalk.yellow(`⚽ No football teams found in message`));
-      // אם לא נמצאו קבוצות, לא שולחים כלום
     }
-  }
+
+    private formatOffersAsText(offers: Offer[], query: string): string {
+        const limitedOffers = offers.slice(0, 5);
+
+        let text = `🎫 *TicketAgent*\n\n`;
+        text += `מצאתי *${offers.length} כרטיסים* עבור "${query}"\n\n`;
+
+        limitedOffers.forEach((offer, index) => {
+            const ticketType = offer.ticketType === 'vip' || offer.isHospitality
+                ? '👑 VIP'
+                : '🎟️ רגיל';
+
+            const rating = offer.owner.externalRating
+                ? ` • ⭐ ${offer.owner.externalRating.rating}`
+                : '';
+
+            const price = this.formatPrice(offer.price, offer.currency);
+
+            text += `*${index + 1}. ${offer.owner.name}*${rating}\n`;
+            text += `${ticketType} • ${price}\n`;
+            text += `${offer.url}\n\n`;
+        });
+
+        text += `🌐 *כל ההצעות באתר:*\nhttps://www.ticketagent.co.il/`;
+
+        return text;
+    }
+
+    private formatPrice(price: number, currency: string): string {
+        const symbols: Record<string, string> = {
+            'ILS': '₪',
+            'EUR': '€',
+            'USD': '$',
+            'GBP': '£',
+        };
+        const symbol = symbols[currency] || currency;
+        return `${price.toLocaleString()} ${symbol}`;
+    }
+
+    private isSpecialCommand(text: string): boolean {
+        const commands = ['התחל', 'start', 'עזרה', 'help', 'שלום', 'היי', 'hi', 'hello'];
+        return commands.includes(text.toLowerCase().trim());
+    }
+
+    private async handleSpecialCommand(command: string, userPhone: string): Promise<void> {
+        const lowerCommand = command.toLowerCase().trim();
+
+        if (['התחל', 'start', 'שלום', 'היי', 'hi', 'hello'].includes(lowerCommand)) {
+            const welcome = `🎫 *TicketAgent*
+
+היי! 👋
+אני עוזר לך למצוא כרטיסים למשחקי כדורגל
+
+*איך זה עובד?*
+כתוב לי שם קבוצה או משחק ואני אמצא לך את ההצעות הטובות ביותר
+
+*דוגמאות:*
+• צ'לסי
+• ארסנל נגד ליברפול
+• ריאל מדריד VIP
+
+נסה עכשיו! ⚽`;
+            await twilioService.sendTextMessage(userPhone, welcome);
+
+        } else if (['עזרה', 'help'].includes(lowerCommand)) {
+            const help = `🎫 *עזרה*
+
+*חיפוש כרטיסים:*
+• שם קבוצה: "מנצ'סטר יונייטד"
+• משחק: "ריאל מדריד נגד ברצלונה"
+• VIP: "VIP לליברפול"
+
+*פקודות:*
+• התחל - הודעת פתיחה
+• עזרה - המדריך הזה
+
+*צור קשר:*
+support@ticketagent.co.il`;
+            await twilioService.sendTextMessage(userPhone, help);
+        }
+    }
 }
 
-export async function handleMetaMessage(body: WebhookBody): Promise<void> {
-  body.entry?.forEach((entry: any) => {
-    const webhookEvent = entry.changes?.[0]?.value;
-    console.log(
-      chalk.green("📨 Received webhook event from Meta:"),
-      JSON.stringify(webhookEvent, null, 2)
-    );
-  });
-}
-
-export function handleEmptyWebhook(): void {
-  console.log(
-    chalk.cyan("📡 Received empty webhook (might be a test/ping from Twilio)")
-  );
-}
-
-export function handleUnknownFormat(body: WebhookBody): void {
-  console.log(
-    chalk.yellow("⚠️ Received unknown webhook format:"),
-    JSON.stringify(body, null, 2)
-  );
-}
-
-export function logWebhookInfo(contentType: string, bodyKeys: string[]): void {
-  console.log(chalk.cyan(`🔍 Webhook received - Content-Type: ${contentType}`));
-  console.log(chalk.cyan(`🔍 Body keys: ${bodyKeys.join(", ") || "(empty)"}`));
-}
-
-export async function processWebhookMessage(body: WebhookBody): Promise<void> {
-  // Twilio WhatsApp webhook format
-  if (body.MessageSid || body.From || body.Body) {
-    await handleTwilioMessage(body);
-    return;
-  }
-
-  // Meta/Facebook WhatsApp Business API format
-  if (body.object === "whatsapp_business_account") {
-    await handleMetaMessage(body);
-    return;
-  }
-
-  // Empty body or unknown format
-  if (Object.keys(body).length === 0) {
-    handleEmptyWebhook();
-    return;
-  }
-
-  // Unknown format
-  handleUnknownFormat(body);
-}
+export const messageHandler = new MessageHandler();

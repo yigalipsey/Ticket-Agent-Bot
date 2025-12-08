@@ -1,37 +1,45 @@
-import { Router } from "express";
-import {
-  processWebhookMessage,
-  logWebhookInfo,
-} from "../services/messageHandler";
+import { Router, Request, Response } from 'express';
+import { messageHandler } from '../services/messageHandler';
+import { TwilioWebhookBody } from '../types';
 
-const webhookRouter = Router();
+const router = Router();
 
-// GET endpoint for webhook verification
-webhookRouter.get("/", (req, res) => {
-  // WhatsApp webhook verification
-  const mode = req.query["hub.mode"];
-  const token = req.query["hub.verify_token"];
-  const challenge = req.query["hub.challenge"];
+/**
+ * POST /webhook
+ * Twilio WhatsApp webhook endpoint
+ */
+router.post('/', async (req: Request, res: Response) => {
+    try {
+        const webhookBody: TwilioWebhookBody = req.body;
 
-  if (mode === "subscribe" && token === process.env.VERIFY_TOKEN) {
-    console.log("✅ Webhook verified");
-    res.status(200).send(challenge);
-  } else {
-    res.status(403).send("Forbidden");
-  }
+        console.log('[Webhook] Received:', {
+            from: webhookBody.From,
+            body: webhookBody.Body?.substring(0, 50),
+        });
+
+        // Respond immediately to Twilio (within 15 seconds)
+        res.status(200).send('OK');
+
+        // Process message asynchronously
+        messageHandler.handleMessage(webhookBody).catch((error) => {
+            console.error('[Webhook] Error handling message:', error);
+        });
+    } catch (error) {
+        console.error('[Webhook] Error:', error);
+        res.status(500).send('Internal Server Error');
+    }
 });
 
-// POST endpoint for receiving messages
-webhookRouter.post("/", async (req, res) => {
-  const body = req.body;
-
-  // Log webhook info
-  logWebhookInfo(req.headers["content-type"] || "unknown", Object.keys(body));
-
-  // Process the webhook message (all logic is in services)
-  await processWebhookMessage(body);
-
-  res.status(200).send("OK");
+/**
+ * GET /webhook
+ * Health check for the webhook
+ */
+router.get('/', (req: Request, res: Response) => {
+    res.json({
+        status: 'ok',
+        message: 'WhatsApp Bot Webhook is running',
+        timestamp: new Date().toISOString(),
+    });
 });
 
-export default webhookRouter;
+export default router;
