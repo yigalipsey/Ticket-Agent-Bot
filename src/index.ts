@@ -2,16 +2,12 @@ import express from 'express';
 import path from 'path';
 import { config } from './config';
 import webhookRouter from './routes/webhook';
-import { imageHostingService } from './services/imageHostingService';
 
 const app = express();
 
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-// Serve generated images statically
-app.use('/images', express.static(imageHostingService.getServingPath()));
 
 // Routes
 app.use('/webhook', webhookRouter);
@@ -33,7 +29,6 @@ app.get('/', (req, res) => {
         endpoints: {
             webhook: '/webhook',
             health: '/health',
-            images: '/images/:filename',
         },
     });
 });
@@ -46,7 +41,6 @@ app.listen(config.server.port, () => {
 📡 Port: ${config.server.port}
 🔗 Webhook URL: http://localhost:${config.server.port}/webhook
 🏥 Health Check: http://localhost:${config.server.port}/health
-🖼️  Images: http://localhost:${config.server.port}/images/
 ================================
 📝 Configure this webhook URL in Twilio Console:
    https://console.twilio.com/
