@@ -1,4 +1,4 @@
-import { teamExtractor } from '../services/teamExtractor';
+import { teamExtractor } from '../services/logic/teamExtractor';
 
 describe('TeamExtractor Logic Tests', () => {
     test('Should identify simple team names', () => {

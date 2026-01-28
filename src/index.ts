@@ -34,6 +34,12 @@ app.get('/health', (req, res) => {
     });
 });
 
+// נתיב פשוט שנועד רק כדי להשאיר את השרת ער
+app.get('/keep-alive', (req, res) => {
+    console.log('Keep-alive ping received');
+    res.status(200).send('I am awake!');
+});
+
 // Root
 app.get('/', (req, res) => {
     res.json({
