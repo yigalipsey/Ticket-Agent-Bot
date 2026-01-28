@@ -1,0 +1,1255 @@
+[
+    {
+        "id": "68f7851162db2d92f4bdf7e1",
+        "name_he": "אאוגסבורג",
+        "slug": "fc-augsburg",
+        "aliases": [
+            "אאוגסבורג",
+            "אאוגסבורך",
+            "אוגסבורג",
+            "אוגסבורך",
+            "אוקסבורג",
+            "אוקסבורך",
+            "fc-augsburg",
+            "augsburg"
+        ]
+    },
+    {
+        "id": "68da7a5d8c51bd5b579b2122",
+        "name_he": "אברטון",
+        "slug": "everton",
+        "aliases": [
+            "אברטון",
+            "אברטון FC",
+            "אברטוןן",
+            "אוברטון",
+            "אוורטון",
+            "אברטון",
+            "everton"
+        ]
+    },
+    {
+        "id": "68da7a5c8c51bd5b579b20ee",
+        "name_he": "אוביידו",
+        "slug": "oviedo",
+        "aliases": [
+            "אוביידו",
+            "אובדו",
+            "אובידו",
+            "אוביידו",
+            "oviedo"
+        ]
+    },
+    {
+        "id": "6926f2b8db62a299f1523963",
+        "name_he": "אודינזה",
+        "slug": "udinese",
+        "aliases": [
+            "אודינזה",
+            "אודינזה",
+            "אודינזה",
+            "אודינזה",
+            "udinese"
+        ]
+    },
+    {
+        "id": "68e25b370d7b31dba56dde86",
+        "name_he": "אולימפיאקוס פיראוס",
+        "slug": "olympiakos-piraeus",
+        "aliases": [
+            "אולימפיאקוס פיראוס",
+            "אולימפיאקוס",
+            "אולימפייקוס",
+            "olympiakos",
+            "olympiakos-piraeus"
+        ]
+    },
+    {
+        "id": "68f7851262db2d92f4bdf7ff",
+        "name_he": "אוניון ברלין",
+        "slug": "union-berlin",
+        "aliases": [
+            "אוניון ברלין",
+            "אוניון",
+            "אוניון ברלין",
+            "union-berlin",
+            "union berlin"
+        ]
+    },
+    {
+        "id": "68e25b350d7b31dba56dde54",
+        "name_he": "אוניון סן גילואז",
+        "slug": "union-st-gilloise",
+        "aliases": [
+            "אוניון סן גילואז",
+            "סן גילואז",
+            "סן גילואז",
+            "union-st-gilloise"
+        ]
+    },
+    {
+        "id": "68da7a5c8c51bd5b579b20f2",
+        "name_he": "אוססונה",
+        "slug": "osasuna",
+        "aliases": [
+            "אוססונה",
+            "אוסאסונה",
+            "osasuna"
+        ]
+    },
+    {
+        "id": "6926ecd5c3aef3887f2add61",
+        "name_he": "אוסר",
+        "slug": "auxerre",
+        "aliases": [
+            "אוסר",
+            "אוקסר",
+            "auxerre"
+        ]
+    },
+    {
+        "id": "68e25b360d7b31dba56dde60",
+        "name_he": "אטאלנטה",
+        "slug": "atalanta",
+        "aliases": [
+            "אטאלנטה",
+            "אטלנטה",
+            "אטלאנטה",
+            "atalanta"
+        ]
+    },
+    {
+        "id": "68e25b340d7b31dba56dde42",
+        "name_he": "איינטרכט פרנקפורט",
+        "slug": "eintracht-frankfurt",
+        "aliases": [
+            "איינטרכט פרנקפורט",
+            "איינטראכט",
+            "פרנקפורט",
+            "איינטרכט",
+            "eintracht-frankfurt",
+            "frankfurt"
+        ]
+    },
+    {
+        "id": "68e25b390d7b31dba56ddea6",
+        "name_he": "אייקס",
+        "slug": "ajax",
+        "aliases": [
+            "אייקס",
+            "איאקס",
+            "אייאקס",
+            "איקס",
+            "אייאקס",
+            "ajax"
+        ]
+    },
+    {
+        "id": "68e25b320d7b31dba56dde14",
+        "name_he": "אינטר",
+        "slug": "inter",
+        "aliases": [
+            "אינטר",
+            "אינטר מילאנו",
+            "אינטר מילאן",
+            "inter",
+            "inter-milan",
+            "inter milan"
+        ]
+    },
+    {
+        "id": "68da7a5b8c51bd5b579b20da",
+        "name_he": "אלאבס",
+        "slug": "alaves",
+        "aliases": [
+            "אלאבס",
+            "אלבס",
+            "אלבאס",
+            "אלהבס",
+            "alaves"
+        ]
+    },
+    {
+        "id": "68da7a5c8c51bd5b579b20fa",
+        "name_he": "אלצ'ה",
+        "slug": "elche",
+        "aliases": [
+            "אלצ'ה",
+            "אלצה",
+            "elche"
+        ]
+    },
+    {
+        "id": "6926ecd5c3aef3887f2add4d",
+        "name_he": "אנז'ה",
+        "slug": "angers",
+        "aliases": [
+            "אנז'ה",
+            "אנז'ה",
+            "angers"
+        ]
+    },
+    {
+        "id": "68da7a5f8c51bd5b579b214a",
+        "name_he": "אסטון וילה",
+        "slug": "aston-villa",
+        "aliases": [
+            "וילה",
+            "אסטון וילא",
+            "אסטון וילה",
+            "אסטון וילה",
+            "aston villa",
+            "aston-villa"
+        ]
+    },
+    {
+        "id": "68da7a5b8c51bd5b579b20d2",
+        "name_he": "אספניול",
+        "slug": "espanyol",
+        "aliases": [
+            "אספניול",
+            "אספניול",
+            "espanyol"
+        ]
+    },
+    {
+        "id": "68da7a5d8c51bd5b579b211a",
+        "name_he": "ארסנל",
+        "slug": "arsenal",
+        "aliases": [
+            "ארסנל",
+            "ארסנאל",
+            "ארס",
+            "ארסנל",
+            "arsenal"
+        ]
+    },
+    {
+        "id": "68da7a5a8c51bd5b579b20ba",
+        "name_he": "אתלטיק בילבאו",
+        "slug": "athletic-bilbao",
+        "aliases": [
+            "אתלטיק בילבאו",
+            "אתלטיק",
+            "בילבאו",
+            "בלבאו",
+            "athletic-bilbao",
+            "bilbao"
+        ]
+    },
+    {
+        "id": "68da7a5a8c51bd5b579b20b6",
+        "name_he": "אתלטיקו מדריד",
+        "slug": "atletico-madrid",
+        "aliases": [
+            "אתלטיקו מדריד",
+            "אתלטיקו",
+            "אתלטיקו",
+            "אתלטי",
+            "atletico-madrid",
+            "atletico"
+        ]
+    },
+    {
+        "id": "68e25b360d7b31dba56dde72",
+        "name_he": "באייר לברקוזן",
+        "slug": "bayer-leverkusen",
+        "aliases": [
+            "באייר לברקוזן",
+            "לברוקוזן",
+            "לברקוזן",
+            "bayer-leverkusen",
+            "leverkusen"
+        ]
+    },
+    {
+        "id": "68e25b320d7b31dba56dde03",
+        "name_he": "באיירן מינכן",
+        "slug": "bayern-munich",
+        "aliases": [
+            "באיירן מינכן",
+            "באיירן",
+            "ביירן",
+            "באירן",
+            "באירן מנכן",
+            "באיירן מנכן",
+            "bayern-munich",
+            "bayern"
+        ]
+    },
+    {
+        "id": "68e25b360d7b31dba56dde6c",
+        "name_he": "בודו/גלימט",
+        "slug": "bodoglimt",
+        "aliases": [
+            "בודו/גלימט",
+            "בודו גלימט",
+            "בודי גלימט",
+            "bodoglimt"
+        ]
+    },
+    {
+        "id": "6926f2b8db62a299f1523969",
+        "name_he": "בולוניה",
+        "slug": "bologna",
+        "aliases": [
+            "בולוניה",
+            "בולוניה",
+            "bologna"
+        ]
+    },
+    {
+        "id": "68e25b330d7b31dba56dde22",
+        "name_he": "בורוסיה דורטמונד",
+        "slug": "borussia-dortmund",
+        "aliases": [
+            "בורוסיה דורטמונד",
+            "דורטמונד",
+            "דורטמונט",
+            "borussia-dortmund",
+            "dortmund"
+        ]
+    },
+    {
+        "id": "68f7851162db2d92f4bdf7c3",
+        "name_he": "בורוסיה מנשנגלדבך",
+        "slug": "borussia-mnchengladbach",
+        "aliases": [
+            "בורוסיה מנשנגלדבך",
+            "מנשנגלדבך",
+            "מנשנגלדבאך",
+            "מנשנגלאדבך",
+            "גלדבך",
+            "גלדבאך",
+            "borussia-mnchengladbach"
+        ]
+    },
+    {
+        "id": "68da7a5d8c51bd5b579b210a",
+        "name_he": "בורנמות'",
+        "slug": "bournemouth",
+        "aliases": [
+            "בורנמות",
+            "בורנמאות",
+            "בורנמות'",
+            "בורנמוט",
+            "בורנמוט",
+            "bournemouth"
+        ]
+    },
+    {
+        "id": "68e25b380d7b31dba56dde9e",
+        "name_he": "בנפיקה",
+        "slug": "benfica",
+        "aliases": [
+            "בנפיקה",
+            "בנפיקה ליסבון",
+            "benfica"
+        ]
+    },
+    {
+        "id": "68da7a5e8c51bd5b579b2136",
+        "name_he": "ברייטון",
+        "slug": "brighton",
+        "aliases": [
+            "ברייטון",
+            "בריטון",
+            "ברייטון אנד הוב",
+            "ברייטון",
+            "brighton"
+        ]
+    },
+    {
+        "id": "68da7a5e8c51bd5b579b213e",
+        "name_he": "ברנטפורד",
+        "slug": "brentford",
+        "aliases": [
+            "ברנטפורד",
+            "ברנטפורד",
+            "ברדפורד",
+            "brentford"
+        ]
+    },
+    {
+        "id": "68da7a5d8c51bd5b579b211e",
+        "name_he": "ברנלי",
+        "slug": "burnley",
+        "aliases": [
+            "ברנלי",
+            "ברנלאי",
+            "burnley"
+        ]
+    },
+    {
+        "id": "6926ecd5c3aef3887f2add5f",
+        "name_he": "ברסט",
+        "slug": "stade-brestois-29",
+        "aliases": [
+            "ברסט",
+            "brest",
+            "stade-brestois-29"
+        ]
+    },
+    {
+        "id": "68da7a5a8c51bd5b579b20ae",
+        "name_he": "ברצלונה",
+        "slug": "barcelona",
+        "aliases": [
+            "ברצלונה",
+            "בארסה",
+            "ברסה",
+            "באירסה",
+            "בארסה",
+            "barcelona",
+            "barca"
+        ]
+    },
+    {
+        "id": "68e25b350d7b31dba56dde5a",
+        "name_he": "גלאטסראיי",
+        "slug": "galatasaray",
+        "aliases": [
+            "גלאטסראיי",
+            "גלאטסראי",
+            "גלאטאסראיי",
+            "galatasaray"
+        ]
+    },
+    {
+        "id": "6926f2b8db62a299f1523965",
+        "name_he": "גנואה",
+        "slug": "genoa",
+        "aliases": [
+            "גנואה",
+            "גנובה",
+            "גנואה",
+            "genoa"
+        ]
+    },
+    {
+        "id": "68f7851162db2d92f4bdf7d3",
+        "name_he": "הופנהיים 1899",
+        "slug": "1899-hoffenheim",
+        "aliases": [
+            "הופנהיים 1899",
+            "הופנהיים",
+            "הופנהיים",
+            "1899-hoffenheim",
+            "hoffenheim"
+        ]
+    },
+    {
+        "id": "68f7851162db2d92f4bdf7f9",
+        "name_he": "היידנהיים",
+        "slug": "1-fc-heidenheim",
+        "aliases": [
+            "היידנהיים",
+            "הידנהיים",
+            "1-fc-heidenheim",
+            "heidenheim"
+        ]
+    },
+    {
+        "id": "68f7851162db2d92f4bdf7f3",
+        "name_he": "המבורגר SV",
+        "slug": "hamburger-sv",
+        "aliases": [
+            "המבורגר SV",
+            "המבורגר",
+            "הנבורג",
+            "hamburger-sv",
+            "hamburger"
+        ]
+    },
+    {
+        "id": "68da7a5d8c51bd5b579b2112",
+        "name_he": "וולברהמפטון",
+        "slug": "wolves",
+        "aliases": [
+            "וולבס",
+            "וולברהמפטון",
+            "וולברהמפטון",
+            "וולברהמפטון",
+            "wolves"
+        ]
+    },
+    {
+        "id": "68f7851162db2d92f4bdf7b3",
+        "name_he": "וולפסבורג",
+        "slug": "vfl-wolfsburg",
+        "aliases": [
+            "וולפסבורג",
+            "וולפסבורך",
+            "vfl-wolfsburg",
+            "wolfsburg"
+        ]
+    },
+    {
+        "id": "68da7a5a8c51bd5b579b20c2",
+        "name_he": "ויאריאל",
+        "slug": "villarreal",
+        "aliases": [
+            "ויאריאל",
+            "וילאריאל",
+            "וילריאל",
+            "villarreal"
+        ]
+    },
+    {
+        "id": "68da7a5a8c51bd5b579b20be",
+        "name_he": "ולנסיה",
+        "slug": "valencia",
+        "aliases": [
+            "ולנסיה",
+            "באלנסיה",
+            "ולנסיה",
+            "valencia"
+        ]
+    },
+    {
+        "id": "68da7a5e8c51bd5b579b212a",
+        "name_he": "וסט האם",
+        "slug": "west-ham",
+        "aliases": [
+            "וסטהם",
+            "וסט האם",
+            "ווסטהם",
+            "ווסט האם",
+            "west-ham",
+            "west ham"
+        ]
+    },
+    {
+        "id": "68f7851162db2d92f4bdf7bb",
+        "name_he": "ורדר ברמן",
+        "slug": "werder-bremen",
+        "aliases": [
+            "ורדר ברמן",
+            "ברמן",
+            "ורדר ברמן",
+            "werder-bremen",
+            "bremen"
+        ]
+    },
+    {
+        "id": "6926f2b8db62a299f152396f",
+        "name_he": "ורונה",
+        "slug": "verona",
+        "aliases": [
+            "ורונה",
+            "הלאס ורונה",
+            "verona"
+        ]
+    },
+    {
+        "id": "68da7a5c8c51bd5b579b20e6",
+        "name_he": "חירונה",
+        "slug": "girona",
+        "aliases": [
+            "חירונה",
+            "ג'ירונה",
+            "גירונה",
+            "גרונה",
+            "ג'רונה",
+            "girona"
+        ]
+    },
+    {
+        "id": "68da7a5b8c51bd5b579b20e2",
+        "name_he": "חתאפה",
+        "slug": "getafe",
+        "aliases": [
+            "חתאפה",
+            "חטאפה",
+            "חטפה",
+            "חתפה",
+            "גטאפה",
+            "גטפה",
+            "getafe"
+        ]
+    },
+    {
+        "id": "68da7a5e8c51bd5b579b2126",
+        "name_he": "טוטנהאם",
+        "slug": "tottenham",
+        "aliases": [
+            "טוטנהם",
+            "טוטנהאם",
+            "ספרס",
+            "טוטנהם",
+            "tottenham",
+            "spurs"
+        ]
+    },
+    {
+        "id": "6926ecd5c3aef3887f2add5b",
+        "name_he": "טולוז",
+        "slug": "toulouse",
+        "aliases": [
+            "טולוז",
+            "טולוז",
+            "toulouse"
+        ]
+    },
+    {
+        "id": "6926f2b8db62a299f152396d",
+        "name_he": "טורינו",
+        "slug": "torino",
+        "aliases": [
+            "טורינו",
+            "טורינו",
+            "torino"
+        ]
+    },
+    {
+        "id": "68e25b360d7b31dba56dde66",
+        "name_he": "יובנטוס",
+        "slug": "juventus",
+        "aliases": [
+            "יובנטוס",
+            "יובה",
+            "יובנטוס",
+            "juventus",
+            "jve"
+        ]
+    },
+    {
+        "id": "6926ecd6c3aef3887f2add69",
+        "name_he": "לאנס",
+        "slug": "lens",
+        "aliases": [
+            "לאנס",
+            "לאנס",
+            "lens"
+        ]
+    },
+    {
+        "id": "6926f2b7db62a299f152395b",
+        "name_he": "לאציו",
+        "slug": "lazio",
+        "aliases": [
+            "לאציו",
+            "לאציו",
+            "lazio"
+        ]
+    },
+    {
+        "id": "68da7a5b8c51bd5b579b20ce",
+        "name_he": "לבנטה",
+        "slug": "levante",
+        "aliases": [
+            "לבנטה",
+            "לבנטה",
+            "levante"
+        ]
+    },
+    {
+        "id": "6926ecd5c3aef3887f2add63",
+        "name_he": "לה הבר",
+        "slug": "le-havre",
+        "aliases": [
+            "לה הבר",
+            "לה האבר",
+            "le-havre"
+        ]
+    },
+    {
+        "id": "6926ecd5c3aef3887f2add5d",
+        "name_he": "לוריאן",
+        "slug": "lorient",
+        "aliases": [
+            "לוריאן",
+            "לוריאן",
+            "lorient"
+        ]
+    },
+    {
+        "id": "68da7a5d8c51bd5b579b2116",
+        "name_he": "ליברפול",
+        "slug": "liverpool",
+        "aliases": [
+            "ליברפול",
+            "ליברפולל",
+            "ליברפול FC",
+            "לברפול",
+            "liverpool"
+        ]
+    },
+    {
+        "id": "68da7a5f8c51bd5b579b2142",
+        "name_he": "לידס",
+        "slug": "leeds",
+        "aliases": [
+            "לידס",
+            "לידס יונייטד",
+            "לידס",
+            "leeds"
+        ]
+    },
+    {
+        "id": "6926ecd5c3aef3887f2add51",
+        "name_he": "ליון",
+        "slug": "lyon",
+        "aliases": [
+            "ליון",
+            "ליון",
+            "lyon"
+        ]
+    },
+    {
+        "id": "6926ecd5c3aef3887f2add4f",
+        "name_he": "ליל",
+        "slug": "lille",
+        "aliases": [
+            "ליל",
+            "ליל",
+            "lille"
+        ]
+    },
+    {
+        "id": "6926f2b8db62a299f1523977",
+        "name_he": "לצ'ה",
+        "slug": "lecce",
+        "aliases": [
+            "לצ'ה",
+            "לצ'ה",
+            "lecce"
+        ]
+    },
+    {
+        "id": "68e25b380d7b31dba56dde8c",
+        "name_he": "מונאקו",
+        "slug": "monaco",
+        "aliases": [
+            "מונאקו",
+            "מונקו",
+            "monaco"
+        ]
+    },
+    {
+        "id": "68da7a5c8c51bd5b579b20fe",
+        "name_he": "מיורקה",
+        "slug": "mallorca",
+        "aliases": [
+            "מיורקה",
+            "מאיורקה",
+            "מיורקה",
+            "mallorca"
+        ]
+    },
+    {
+        "id": "68f7851162db2d92f4bdf7c9",
+        "name_he": "מיינץ 05",
+        "slug": "fsv-mainz-05",
+        "aliases": [
+            "מיינץ 05",
+            "מיינץ",
+            "מיינץ",
+            "fsv-mainz-05",
+            "mainz"
+        ]
+    },
+    {
+        "id": "6926f2b7db62a299f152395f",
+        "name_he": "מילאן",
+        "slug": "ac-milan",
+        "aliases": [
+            "מילאן",
+            "איי סי מילאן",
+            "ac-milan",
+            "milan"
+        ]
+    },
+    {
+        "id": "68da7a5c8c51bd5b579b2102",
+        "name_he": "מנצ'סטר יונייטד",
+        "slug": "manchester-united",
+        "aliases": [
+            "יונייטד",
+            "מאנצ'סטר יונייטד",
+            "מנצסטר יונייטד",
+            "מאנצסטר יו",
+            "יוניטד",
+            "manchester-united",
+            "man united"
+        ]
+    },
+    {
+        "id": "68da7a5e8c51bd5b579b2132",
+        "name_he": "מנצ'סטר סיטי",
+        "slug": "manchester-city",
+        "aliases": [
+            "סיטי",
+            "מנצסטר סיטי",
+            "מאנצ'סטר סיטי",
+            "מנצסטר סיטי",
+            "manchester-city",
+            "man city"
+        ]
+    },
+    {
+        "id": "6926ecd5c3aef3887f2add65",
+        "name_he": "מץ",
+        "slug": "metz",
+        "aliases": [
+            "מץ",
+            "מץ",
+            "metz"
+        ]
+    },
+    {
+        "id": "68e25b340d7b31dba56dde30",
+        "name_he": "מרסיי",
+        "slug": "marseille",
+        "aliases": [
+            "מרסיי",
+            "מארסיי",
+            "מרסי",
+            "marseille"
+        ]
+    },
+    {
+        "id": "6926ecd5c3aef3887f2add53",
+        "name_he": "נאנט",
+        "slug": "nantes",
+        "aliases": [
+            "נאנט",
+            "נאנט",
+            "nantes"
+        ]
+    },
+    {
+        "id": "68e25b350d7b31dba56dde4e",
+        "name_he": "נאפולי",
+        "slug": "napoli",
+        "aliases": [
+            "נאפולי",
+            "נאפולי",
+            "napoli"
+        ]
+    },
+    {
+        "id": "68da7a5f8c51bd5b579b2146",
+        "name_he": "נוטינגהאם פורסט",
+        "slug": "nottingham-forest",
+        "aliases": [
+            "נוטינגהאם",
+            "נוטינגהם פורסט",
+            "פורסט",
+            "נוטינגהם",
+            "nottingham"
+        ]
+    },
+    {
+        "id": "68da7a5d8c51bd5b579b2106",
+        "name_he": "ניוקאסל",
+        "slug": "newcastle",
+        "aliases": [
+            "ניוקאסל יונייטד",
+            "ניוקסל",
+            "ניוקאסל",
+            "ניוקאסל",
+            "newcastle"
+        ]
+    },
+    {
+        "id": "6926ecd5c3aef3887f2add55",
+        "name_he": "ניס",
+        "slug": "nice",
+        "aliases": [
+            "ניס",
+            "ניס",
+            "nice"
+        ]
+    },
+    {
+        "id": "68da7a5b8c51bd5b579b20c6",
+        "name_he": "סביליה",
+        "slug": "sevilla",
+        "aliases": [
+            "סביליה",
+            "סבילה",
+            "סבייה",
+            "sevilla"
+        ]
+    },
+    {
+        "id": "68e25b380d7b31dba56dde92",
+        "name_he": "סלאביה פראג",
+        "slug": "slavia-praha",
+        "aliases": [
+            "סלאביה פראג",
+            "סלאביה",
+            "slavia-praha"
+        ]
+    },
+    {
+        "id": "68da7a5b8c51bd5b579b20ca",
+        "name_he": "סלטה ויגו",
+        "slug": "celta-vigo",
+        "aliases": [
+            "סלטה ויגו",
+            "סלטה",
+            "סלטה ויגו",
+            "celta-vigo",
+            "celta"
+        ]
+    },
+    {
+        "id": "68da7a5f8c51bd5b579b214e",
+        "name_he": "סנדרלנד",
+        "slug": "sunderland",
+        "aliases": [
+            "סנדרלנד",
+            "סאנדרלנד",
+            "סנדרלאנד",
+            "סנדרלנד",
+            "sunderland"
+        ]
+    },
+    {
+        "id": "68f7851262db2d92f4bdf805",
+        "name_he": "סנט פאולי",
+        "slug": "fc-st-pauli",
+        "aliases": [
+            "סנט פאולי",
+            "סאנט פאולי",
+            "fc-st-pauli"
+        ]
+    },
+    {
+        "id": "6926f2b7db62a299f152395d",
+        "name_he": "ססואולו",
+        "slug": "sassuolo",
+        "aliases": [
+            "ססואולו",
+            "ססואלו",
+            "sassuolo"
+        ]
+    },
+    {
+        "id": "68e25b340d7b31dba56dde3c",
+        "name_he": "ספורטינג ליסבון",
+        "slug": "sporting-cp",
+        "aliases": [
+            "ספורטינג ליסבון",
+            "ספורטינג",
+            "ספורטינג",
+            "sporting-cp",
+            "sporting"
+        ]
+    },
+    {
+        "id": "68e25b370d7b31dba56dde7a",
+        "name_he": "פ.ס.ו איינדהובן",
+        "slug": "psv-eindhoven",
+        "aliases": [
+            "פ.ס.ו איינדהובן",
+            "איינדהובן",
+            "אינדהובן",
+            "psv-eindhoven",
+            "psv"
+        ]
+    },
+    {
+        "id": "68e25b380d7b31dba56dde98",
+        "name_he": "פאפוס",
+        "slug": "pafos",
+        "aliases": [
+            "פאפוס",
+            "פאפוס",
+            "pafos"
+        ]
+    },
+    {
+        "id": "68e25b320d7b31dba56dde0e",
+        "name_he": "פאריס סן ז'רמן",
+        "slug": "paris-saint-germain",
+        "aliases": [
+            "פאריס סן ז'רמן",
+            "פאריס סן זרמן",
+            "פריז סן זרמן",
+            "פריז",
+            "פסז",
+            "psg",
+            "paris-saint-germain",
+            "paris"
+        ]
+    },
+    {
+        "id": "6926f2b8db62a299f1523973",
+        "name_he": "פארמה",
+        "slug": "parma",
+        "aliases": [
+            "פארמה",
+            "פארמה",
+            "parma"
+        ]
+    },
+    {
+        "id": "68da7a5d8c51bd5b579b210e",
+        "name_he": "פולהאם",
+        "slug": "fulham",
+        "aliases": [
+            "פולהם",
+            "פולהאם",
+            "פולהאם",
+            "fulham"
+        ]
+    },
+    {
+        "id": "6926f2b8db62a299f152396b",
+        "name_he": "פיורנטינה",
+        "slug": "fiorentina",
+        "aliases": [
+            "פיורנטינה",
+            "פיורנטינה",
+            "fiorentina"
+        ]
+    },
+    {
+        "id": "6926f2b8db62a299f1523975",
+        "name_he": "פיזה",
+        "slug": "pisa",
+        "aliases": [
+            "פיזה",
+            "פיזה",
+            "pisa"
+        ]
+    },
+    {
+        "id": "6926ecd6c3aef3887f2add67",
+        "name_he": "פריז",
+        "slug": "paris-fc",
+        "aliases": [
+            "פריז",
+            "פריז",
+            "paris-fc"
+        ]
+    },
+    {
+        "id": "68f7851162db2d92f4bdf7ab",
+        "name_he": "פרייבורג",
+        "slug": "sc-freiburg",
+        "aliases": [
+            "פרייבורג",
+            "פרייבורך",
+            "sc-freiburg"
+        ]
+    },
+    {
+        "id": "68da7a5e8c51bd5b579b212e",
+        "name_he": "צ'לסי",
+        "slug": "chelsea",
+        "aliases": [
+            "צלסי",
+            "צ'לסי",
+            "צ'לסי FC",
+            "צלסי FC",
+            "צ'לסיי",
+            "צלסי",
+            "chelsea"
+        ]
+    },
+    {
+        "id": "6926f2b8db62a299f1523979",
+        "name_he": "קומו",
+        "slug": "como",
+        "aliases": [
+            "קומו",
+            "קומו",
+            "como"
+        ]
+    },
+    {
+        "id": "68e25b370d7b31dba56dde80",
+        "name_he": "קופנהגן",
+        "slug": "fc-copenhagen",
+        "aliases": [
+            "קופנהגן",
+            "קופנהאגן",
+            "fc-copenhagen"
+        ]
+    },
+    {
+        "id": "68e25b390d7b31dba56ddeac",
+        "name_he": "קייראט אלמטי",
+        "slug": "kairat-almaty",
+        "aliases": [
+            "קייראט אלמטי",
+            "קייראט",
+            "kairat-almaty"
+        ]
+    },
+    {
+        "id": "68e25b340d7b31dba56dde36",
+        "name_he": "קלאב ברוז'",
+        "slug": "club-brugge-kv",
+        "aliases": [
+            "קלאב ברוז'",
+            "ברוז'",
+            "ברוז",
+            "ברוז",
+            "club-brugge-kv",
+            "brugge"
+        ]
+    },
+    {
+        "id": "6926f2b8db62a299f1523961",
+        "name_he": "קליארי",
+        "slug": "cagliari",
+        "aliases": [
+            "קליארי",
+            "קליארי",
+            "cagliari"
+        ]
+    },
+    {
+        "id": "68f7851262db2d92f4bdf80b",
+        "name_he": "קלן",
+        "slug": "1fc-kln",
+        "aliases": [
+            "קלן",
+            "קולן",
+            "1fc-kln",
+            "koln"
+        ]
+    },
+    {
+        "id": "68e25b330d7b31dba56dde1c",
+        "name_he": "קרבאג",
+        "slug": "qarabag",
+        "aliases": [
+            "קרבאג",
+            "קראבאג",
+            "קראבאח",
+            "qarabag"
+        ]
+    },
+    {
+        "id": "68da7a5e8c51bd5b579b213a",
+        "name_he": "קריסטל פאלאס",
+        "slug": "crystal-palace",
+        "aliases": [
+            "פאלאס",
+            "קריסטל פלאס",
+            "קריסטל פאלס",
+            "פאלס",
+            "crystal-palace",
+            "palace"
+        ]
+    },
+    {
+        "id": "6926f2b8db62a299f1523971",
+        "name_he": "קרמונזה",
+        "slug": "cremonese",
+        "aliases": [
+            "קרמונזה",
+            "קרמונזה",
+            "cremonese"
+        ]
+    },
+    {
+        "id": "68da7a5c8c51bd5b579b20f6",
+        "name_he": "ראיו ואיקאנו",
+        "slug": "rayo-vallecano",
+        "aliases": [
+            "ראיו ואיקאנו",
+            "ראיו",
+            "ראיו ויקאנו",
+            "rayo-vallecano"
+        ]
+    },
+    {
+        "id": "6926f2b8db62a299f1523967",
+        "name_he": "רומא",
+        "slug": "as-roma",
+        "aliases": [
+            "רומא",
+            "רומה",
+            "as-roma",
+            "roma"
+        ]
+    },
+    {
+        "id": "68da7a5b8c51bd5b579b20de",
+        "name_he": "ריאל בטיס",
+        "slug": "real-betis",
+        "aliases": [
+            "ריאל בטיס",
+            "בטיס",
+            "בטיס",
+            "real-betis",
+            "betis"
+        ]
+    },
+    {
+        "id": "68da7a5b8c51bd5b579b20d6",
+        "name_he": "ריאל מדריד",
+        "slug": "real-madrid",
+        "aliases": [
+            "ריאל מדריד",
+            "ריאל",
+            "ריאל",
+            "real-madrid",
+            "real madrid",
+            "rm"
+        ]
+    },
+    {
+        "id": "68da7a5c8c51bd5b579b20ea",
+        "name_he": "ריאל סוסיאדד",
+        "slug": "real-sociedad",
+        "aliases": [
+            "ריאל סוסיאדד",
+            "סוסיאדד",
+            "סוסיאדד",
+            "real-sociedad",
+            "sociedad"
+        ]
+    },
+    {
+        "id": "6926ecd5c3aef3887f2add57",
+        "name_he": "רן",
+        "slug": "rennes",
+        "aliases": [
+            "רן",
+            "רן",
+            "rennes"
+        ]
+    },
+    {
+        "id": "68f7851162db2d92f4bdf7e7",
+        "name_he": "שטוטגרט",
+        "slug": "vfb-stuttgart",
+        "aliases": [
+            "שטוטגרט",
+            "שטוטגארט",
+            "שטוטגארט",
+            "vfb-stuttgart",
+            "stuttgart"
+        ]
+    },
+    {
+        "id": "6926ecd5c3aef3887f2add59",
+        "name_he": "שטרסבורג",
+        "slug": "strasbourg",
+        "aliases": [
+            "שטרסבורג",
+            "סטראסבורג",
+            "strasbourg"
+        ]
+    },
+    {
+        "id": "68f7851162db2d92f4bdf7ed",
+        "name_he": "RB לייפציג",
+        "slug": "rb-leipzig",
+        "aliases": [
+            "RB לייפציג",
+            "לייפציג",
+            "לייפציג",
+            "rb-leipzig",
+            "leipzig"
+        ]
+    }
+]

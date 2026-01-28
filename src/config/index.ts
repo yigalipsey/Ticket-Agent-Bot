@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 
-dotenv.config();
+dotenv.config({ quiet: true });
 
 export const config = {
     // Twilio Configuration
@@ -12,8 +12,9 @@ export const config = {
 
     // API Configuration
     api: {
-        baseUrl: process.env.API_BASE_URL || 'http://localhost:4000',
-        offersEndpoint: '/api/whatsapp/offers/natural-language',
+        baseUrl: process.env.API_BASE_URL || 'https://www.ticketagent.co.il',
+        openaiKey: process.env.OPENAI_API_KEY || '',
+        geminiKey: process.env.GEMINI_API_KEY || '',
     },
 
     // Server Configuration

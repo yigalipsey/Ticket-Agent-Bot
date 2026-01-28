@@ -1,5 +1,5 @@
 import { Router, Request, Response } from 'express';
-import { messageHandler } from '../services/messageHandler';
+import { messageHandler } from '../services/handlers/messageHandler';
 import { TwilioWebhookBody } from '../types';
 
 const router = Router();
@@ -13,8 +13,9 @@ router.post('/', async (req: Request, res: Response) => {
         const webhookBody: TwilioWebhookBody = req.body;
 
         console.log('[Webhook] Received:', {
-            from: webhookBody.From,
-            body: webhookBody.Body?.substring(0, 50),
+            From: webhookBody.From,
+            Body: webhookBody.Body?.substring(0, 50),
+            FullBody: req.body // זה יעזור לך לראות מה שלחת בפוסטמן
         });
 
         // Respond immediately to Twilio (within 15 seconds)

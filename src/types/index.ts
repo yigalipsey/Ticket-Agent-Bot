@@ -1,43 +1,30 @@
-// Actual Offer structure from the API
+// Basic Offer structure
 export interface Offer {
     id: string;
-    fixtureId: string;
-    ownerType: string;
     price: number;
     currency: string;
     url: string;
-    fallbackContact: string | null;
-    isAvailable: boolean;
     ticketType: 'standard' | 'vip';
     isHospitality: boolean;
-    notes: string | null;
     owner: {
-        id: string;
         name: string;
-        slug: string;
-        logoUrl: string;
-        imageUrl: string;
-        externalRating?: {
-            rating: number;
-            url: string;
-            provider: string;
-        };
-    };
-    // Optional fixture info if included
-    fixture?: {
-        homeTeam?: { name: string };
-        awayTeam?: { name: string };
-        venue?: string;
-        eventDate?: string;
     };
 }
 
-// API Response structure
-export interface OffersResponse {
+// Fixture structure
+export interface Fixture {
+    id: string;
+    slug: string;
+    homeTeam: { name: string };
+    awayTeam: { name: string };
+    date: string;
+    venue: { name: string };
+    offers?: Offer[];
+}
+
+export interface ApiResponse<T> {
     success: boolean;
-    code: string;
-    message: string;
-    data: Offer[];
+    data: T;
 }
 
 // Twilio Webhook body
